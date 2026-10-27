@@ -1,297 +1,378 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#fff0f5">
-<title>Happy Birthday Lechu ♡</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Lechu ♡</title>
 
-<style>
-:root {
-  --pink: #f4a8bd;
-  --deep: #a84d70;
-  --cream: #fff8f5;
-  --ink: #754c5b;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--cream);
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  text-align: center;
-  overflow-x: hidden;
-}
-section { padding: 65px 20px; }
-.hero {
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background:
-    radial-gradient(ellipse at 15% 20%, #ffffff 0, transparent 35%),
-    linear-gradient(145deg, #fff0f5, #fbd5e1, #fff6ed);
-  position: relative;
-  overflow: hidden;
-}
-.eyebrow {
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font: 11px Arial, sans-serif;
-}
-h1 {
-  font-size: clamp(42px, 12vw, 76px);
-  line-height: 1.05;
-  color: var(--deep);
-  font-weight: normal;
-  margin: 20px 0;
-}
-h2 { font-size: 32px; font-weight: normal; }
-p { line-height: 1.85; }
-.hero p { max-width: 310px; }
-button, .button {
-  display: inline-block;
-  border: 0;
-  background: var(--deep);
-  color: white;
-  padding: 14px 23px;
-  border-radius: 30px;
-  font-size: 14px;
-  text-decoration: none;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  margin: 7px;
-  transition: transform .2s;
-}
-button:active, .button:active { transform: scale(.96); }
-.secondary {
-  background: #fff;
-  color: var(--deep);
-  border: 1px solid #efc1d0;
-}
-.flower { font-size: 28px; margin: 10px; }
-.wrap { max-width: 720px; margin: auto; }
-.intro { font-size: 17px; }
-.cake {
-  font-size: 92px;
-  margin: 18px 0;
-  animation: bob 2.4s ease-in-out infinite;
-}
-@keyframes bob {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 13px;
-  margin-top: 25px;
-}
-.photo {
-  background: white;
-  padding: 9px 9px 18px;
-  box-shadow: 0 5px 22px #aa65751c;
-  transform: rotate(-2deg);
-}
-.photo:nth-child(even) { transform: rotate(2deg); }
-.photo img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  background: #f9dce5;
-  display: block;
-}
-.photo p { margin: 9px 0 0; font-size: 13px; }
-.note {
-  background: white;
-  padding: 27px 23px;
-  border: 1px solid #f2d3dd;
-  border-radius: 20px;
-  text-align: left;
-  box-shadow: 0 8px 30px #a84d7010;
-}
-.note p { white-space: pre-line; }
-.hidden { display: none; }
-.final {
-  background: linear-gradient(145deg, #fbd5e1, #fff1f5);
-}
-footer { padding: 25px 12px; font-size: 12px; }
-.heart {
-  position: fixed;
-  bottom: -30px;
-  pointer-events: none;
-  z-index: 5;
-  animation: rise 6s linear forwards;
-}
-@keyframes rise {
-  to { transform: translateY(-110vh) rotate(35deg); opacity: 0; }
-}
-@media (min-width: 600px) {
-  .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: #713b55;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(
+        145deg,
+        #fff0f5,
+        #ffe0ec,
+        #fbd0e2
+      );
+    }
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -40px;
+      color: #e88daf;
+      opacity: 0.6;
+      animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.65;
+      }
+      to {
+        transform: translateY(-115vh) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 650px;
+      margin: auto;
+      padding: 25px 18px 45px;
+    }
+
+    .top {
+      text-align: center;
+      padding: 38px 10px 28px;
+    }
+
+    .tiny {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #efb3ca;
+      border-radius: 30px;
+      color: #a34f73;
+      background: #fff7fa;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(44px, 12vw, 70px);
+      line-height: 1.2;
+      margin: 24px 0 12px;
+      color: #bd527e;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #916078;
+    }
+
+    .divider {
+      color: #d77da1;
+      text-align: center;
+      margin: 22px 0;
+      letter-spacing: 8px;
+    }
+
+    .card {
+      padding: 27px 22px;
+      margin: 20px 0;
+      border: 1px solid rgba(206, 116, 157, 0.3);
+      border-radius: 24px;
+      background: rgba(255, 250, 252, 0.8);
+      box-shadow: 0 12px 35px rgba(173, 83, 122, 0.09);
+      text-align: center;
+    }
+
+    .card h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 35px;
+      color: #bd527e;
+      margin-bottom: 13px;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 2;
+      color: #82536a;
+    }
+
+    .cake {
+      font-size: 55px;
+      margin: 12px 0;
+    }
+
+    .secret-card {
+      background: linear-gradient(150deg, #fff8fb, #ffe9f2);
+    }
+
+    .letter-icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 13px 23px;
+      border: none;
+      border-radius: 30px;
+      background: #d96f99;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      box-shadow: 0 6px 15px #d96f9940;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    button:active {
+      transform: scale(0.96);
+    }
+
+    button:hover {
+      background: #bf527f;
+    }
+
+    #letter {
+      display: none;
+      margin-top: 24px;
+      padding: 22px 17px;
+      border-radius: 17px;
+      background: white;
+      text-align: left;
+      animation: appear 0.6s ease;
+    }
+
+    #letter.show {
+      display: block;
+    }
+
+    #letter p {
+      white-space: pre-line;
+      line-height: 2;
+      font-size: 14px;
+      color: #82536a;
+    }
+
+    .signature {
+      display: block;
+      text-align: right;
+      margin-top: 20px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 27px;
+      color: #bd527e;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .song-link {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 12px 18px;
+      border-radius: 25px;
+      background: #fff0f6;
+      color: #b64f7c;
+      text-decoration: none;
+      font-size: 13px;
+      border: 1px solid #f1c3d5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 10px 10px;
+      font-size: 12px;
+      line-height: 2;
+      color: #a56b85;
+    }
+
+    @media (max-width: 380px) {
+      main {
+        padding: 15px 12px 30px;
+      }
+
+      .card {
+        padding: 23px 16px;
+      }
+
+      .card p, #letter p {
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-<section class="hero" id="home">
-  <div class="flower">🌷 ♡ 🌷</div>
-  <div class="eyebrow">A little website, made just for you</div>
-  <h1>Happy Birthday<br>Lechu ♡</h1>
-  <p>
-    To Sankara Lakshmi,<br>
-    a beautiful soul who deserves a beautiful day.
-  </p>
-  <button onclick="document.getElementById('wish').scrollIntoView()">
-    Open your little surprise ♡
-  </button>
-  <div class="flower">✿ &nbsp; ✧ &nbsp; ✿</div>
-  <small>01 November 2026</small>
-</section>
+  <div class="hearts" id="hearts"></div>
 
-<section id="wish">
-  <div class="wrap">
-    <div class="eyebrow">Today is all about you</div>
-    <h2>It's your day, Lechu 🎂</h2>
-    <div class="cake">🎂</div>
-    <p class="intro">
-      May your new year be filled with little joys,
-      unexpected happiness, peaceful days, and
-      all the beautiful things your heart hopes for.
-    </p>
-    <p>✨ Make a wish. You deserve the sweetest year. ✨</p>
-    <button onclick="celebrate()">Send some birthday magic ✨</button>
-    <p id="magic" aria-live="polite"></p>
-  </div>
-</section>
+  <main>
+    <header class="top">
+      <span class="tiny">A LITTLE SURPRISE FOR YOU ♡</span>
 
-<section style="background:#fff0f5">
-  <div class="wrap">
-    <div class="eyebrow">Little moments, big memories</div>
-    <h2>Our little corner ♡</h2>
-    <p>Replace these sample pictures with your favourite memories together.</p>
+      <h1>Happy Birthday,<br>Lechu ♡</h1>
 
-    <div class="gallery">
-      <div class="photo">
-        <img src="https://placehold.co/400x520/f8dce6/96556e?text=Our+Memory+1"
-             alt="Replace with your first favourite photo">
-        <p>One of my favourite memories ♡</p>
+      <p class="subtitle">
+        A little corner of the internet,<br>
+        made especially for you. 🎀
+      </p>
+
+      <div class="divider">♡ ✧ ♡</div>
+
+      <p class="subtitle">
+        Some people make ordinary days feel special.<br>
+        You're one of those people. 💗
+      </p>
+    </header>
+
+    <section class="card">
+      <div class="cake">🎂</div>
+      <h2>It's your special day!</h2>
+      <p>
+        Happy Birthday to someone who deserves
+        all the happiness, love, peace and beautiful
+        little moments this world has to offer.
+      </p>
+      <div class="divider">୨୧</div>
+      <p>
+        May your smile stay bright, your heart stay
+        peaceful, and this new year of your life
+        bring you countless reasons to be happy.
+      </p>
+    </section>
+
+    <section class="card secret-card">
+      <div class="letter-icon">💌</div>
+      <h2>A Secret Letter</h2>
+      <p>
+        There's something I've been wanting to tell you...
+        <br>Tap below when you're ready. ♡
+      </p>
+
+      <button id="letterButton" onclick="toggleLetter()">
+        Open your little letter 💗
+      </button>
+
+      <div id="letter">
+        <p>just wannaaaaaaa tell you thank youuuuu for coming into my life, thank you for actually making me smile and laugh.
+
+thank you for being so understanding. thank you for
+
+being my biggest supporter. thank you for caring about me.
+
+i really appreciate you so much</p>
+        <span class="signature">Always wishing you happiness ♡</span>
       </div>
-      <div class="photo">
-        <img src="https://placehold.co/400x520/f5e5d9/96556e?text=Our+Memory+2"
-             alt="Replace with your second favourite photo">
-        <p>A moment worth keeping ✿</p>
+    </section>
+
+    <section class="card">
+      <h2>One little wish...</h2>
+      <p>
+        I hope life gives you the same happiness
+        that you bring into the lives of the people
+        around you.
+      </p>
+
+      <div class="divider">♡</div>
+
+      <p>
+        Keep being you, Lechu.<br>
+        You're appreciated more than you know. 🌷
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>A little music 🎧</h2>
+      <p>
+        Every special moment deserves a soundtrack.
+        Here's a little place to find a song for today.
+      </p>
+
+      <a
+        class="song-link"
+        href="https://www.youtube.com/results?search_query=Tamil+romantic+melody+songs"
+        target="_blank"
+        rel="noopener noreferrer">
+        Listen to a Tamil melody ♫
+      </a>
+    </section>
+
+    <footer>
+      Made with lots of care ♡<br>
+      For Lechu, on her special day 🎀
+      <div style="font-size: 23px; margin-top: 10px;">
+        ♡ ∞ ♡
       </div>
-      <div class="photo">
-        <img src="https://placehold.co/400x520/f5d9e4/96556e?text=Our+Memory+3"
-             alt="Replace with your third favourite photo">
-        <p>More memories to come ♡</p>
-      </div>
-      <div class="photo">
-        <img src="https://placehold.co/400x520/f9e9e0/96556e?text=Our+Memory+4"
-             alt="Replace with your fourth favourite photo">
-        <p>A little piece of happiness 🌷</p>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
+  </main>
 
-<section>
-  <div class="wrap">
-    <div class="eyebrow">A few words from me</div>
-    <h2>A little letter for you 💌</h2>
-    <p>There's something here for you to read.</p>
-    <button onclick="toggleLetter()" id="letterButton">
-      Open your letter ♡
-    </button>
+  <script>
+    function toggleLetter() {
+      const letter = document.getElementById('letter');
+      const button = document.getElementById('letterButton');
 
-    <div class="note hidden" id="letter">
-      <p>Dear Lechu, 🌷
+      letter.classList.toggle('show');
 
-Happy Birthday!
+      if (letter.classList.contains('show')) {
+        button.textContent = 'Close your little letter ♡';
+      } else {
+        button.textContent = 'Open your little letter 💗';
+      }
+    }
 
-I'm really glad that life gave me a friend like you.
-Some people make ordinary days feel a little more special,
-and I'm grateful for all the little moments we've shared.
+    const hearts = document.getElementById('hearts');
+    const symbols = ['♡', '♥', '✧', '💕'];
 
-On your birthday, I hope you always find reasons to smile,
-people who genuinely care about you, courage for your dreams,
-and peace even on the difficult days.
+    for (let i = 0; i < 22; i++) {
+      const heart = document.createElement('span');
 
-Never stop being the person you are.
-Keep smiling, keep growing, and keep chasing everything
-that makes you happy.
+      heart.className = 'heart';
+      heart.textContent = symbols[i % symbols.length];
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.fontSize = (12 + Math.random() * 18) + 'px';
+      heart.style.animationDuration = (9 + Math.random() * 12) + 's';
+      heart.style.animationDelay = (-Math.random() * 20) + 's';
 
-May 17 bring you countless beautiful memories,
-new beginnings, and a heart full of contentment.
-
-Thank you for being you.
-
-Happy Birthday once again, Lechu! ♡
-
-With lots of good wishes,
-Your friend ✨</p>
-    </div>
-  </div>
-</section>
-
-<section class="final">
-  <div class="wrap">
-    <div class="flower">🌸 ✨ 🌸</div>
-    <h2>One last thing...</h2>
-    <p>
-      No matter how much life changes,
-      I hope this year brings you closer to
-      every dream you're quietly working towards.
-    </p>
-    <h2>Stay happy, Lechu ♡</h2>
-    <button onclick="playTamilSong()">Play a Tamil song 🎵</button>
-    <p style="font-size:12px">
-      Tap the button to choose a song on YouTube.
-    </p>
-    <a class="button secondary" href="#home">Back to the beginning ↑</a>
-  </div>
-</section>
-
-<footer>
-  Made with ♡ especially for Lechu · 01.11.2026
-</footer>
-
-<script>
-function toggleLetter() {
-  const letter = document.getElementById("letter");
-  const button = document.getElementById("letterButton");
-  letter.classList.toggle("hidden");
-  button.textContent = letter.classList.contains("hidden")
-    ? "Open your letter ♡"
-    : "Close your letter ♡";
-}
-
-function celebrate() {
-  document.getElementById("magic").textContent =
-    "💗 Happy Birthday, Lechu! 🌸 May your wishes bloom.";
-  for (let i = 0; i < 24; i++) {
-    setTimeout(() => {
-      const heart = document.createElement("span");
-      heart.className = "heart";
-      heart.textContent = ["♡", "💗", "🌸", "✨"][i % 4];
-      heart.style.left = Math.random() * 95 + "vw";
-      heart.style.fontSize = (16 + Math.random() * 18) + "px";
-      document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 6200);
-    }, i * 100);
-  }
-}
-
-function playTamilSong() {
-  window.open(
-    "https://www.youtube.com/results?search_query=Tamil+birthday+special+melody+songs",
-    "_blank",
-    "noopener"
-  );
-}
-</script>
+      hearts.appendChild(heart);
+    }
+  </script>
 </body>
 </html>
