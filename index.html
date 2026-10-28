@@ -8,6 +8,60 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+.birthday-magic-card {
+  margin: 25px auto;
+  padding: 35px 20px;
+  max-width: 500px;
+  text-align: center;
+  border-radius: 28px;
+  border: 1px solid #f1c6d9;
+  background: linear-gradient(145deg, #fffaff, #ffe7f1, #fff5fa);
+  box-shadow: 0 12px 35px rgba(205, 105, 155, .25);
+  cursor: pointer;
+}
+
+.birthday-magic-card h2,
+.birthday-magic-card h1 {
+  font-family: 'Dancing Script', cursive;
+  color: #bd527f;
+  margin: 12px 0;
+}
+
+.birthday-magic-card h2 { font-size: 36px; }
+
+.birthday-magic-card h1 {
+  font-size: clamp(34px, 9vw, 48px);
+}
+
+.birthday-magic-card p { color: #98647c; }
+
+.birthday-cake {
+  font-size: 60px;
+  animation: birthdayBounce 2s infinite ease-in-out;
+}
+
+.card-sparkle, .card-divider {
+  color: #d67aa5;
+  margin: 15px 0;
+}
+
+.birthday-magic-card button {
+  display: block;
+  margin: 22px auto 16px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #d87ca5, #b95785);
+  color: white;
+}
+
+.birthday-magic-card small { color: #a57990; }
+
+@keyframes birthdayBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+  
   <style>
     * {
       margin: 0;
@@ -307,24 +361,23 @@ i really appreciate you so much
       </div>
     </section>
     
-<section class="card">
-  <h2>A song for you 🎧</h2>
-  <p>A little melody for your special day, Lechu ♡</p>
+<section class="birthday-magic-card" onclick="releaseBirthdayMagic(event)">
+  <div class="card-sparkle">✧ ♡ ✧</div>
+  <div class="birthday-cake">🎂</div>
 
-  <audio id="birthdaySong"
-         autoplay
-         loop
-         controls
-         preload="auto"
-         style="width:100%; margin-top:20px;">
-    <source src="./lechu-song.mp3" type="audio/mpeg">
-    Your browser does not support audio.
-  </audio>
+  <h2>Happiest Birthday</h2>
+  <h1>Lechu Madam 🤍</h1>
 
-  <button onclick="document.getElementById('birthdaySong').play()">
-    Play song ♡
+  <div class="card-divider">──── ♡ ────</div>
+  <p>~ Sankara Lakshmi</p>
+
+  <button type="button" onclick="releaseBirthdayMagic(event)">
+    Tap for Birthday Magic ✨
   </button>
+
+  <small>Made with lots of care 🤍</small>
 </section>
+    
    <footer>
       Made with lots of care ♡<br>
       For Lechu, on her special day 🎀
@@ -363,6 +416,41 @@ i really appreciate you so much
 
       hearts.appendChild(heart);
     }
+    
+function releaseBirthdayMagic(event) {
+  if (event) event.stopPropagation();
+
+  const symbols = ['✨', '🤍', '💖', '🌸', '⭐', '♡', '🎉'];
+
+  for (let i = 0; i < 65; i++) {
+    const particle = document.createElement('span');
+
+    particle.textContent =
+      symbols[Math.floor(Math.random() * symbols.length)];
+
+    particle.style.position = 'fixed';
+    particle.style.left = (10 + Math.random() * 80) + 'vw';
+    particle.style.top = (25 + Math.random() * 50) + 'vh';
+    particle.style.zIndex = '9999';
+    particle.style.pointerEvents = 'none';
+    particle.style.fontSize = (15 + Math.random() * 20) + 'px';
+    particle.style.transition =
+      'transform 1.8s ease-out, opacity 1.8s ease-out';
+
+    document.body.appendChild(particle);
+
+    requestAnimationFrame(() => {
+      particle.style.transform =
+        'translate(' + (Math.random() * 300 - 150) +
+        'px, ' + (Math.random() * 400 - 200) +
+        'px) rotate(' + (Math.random() * 360) + 'deg)';
+      particle.style.opacity = '0';
+    });
+
+    setTimeout(() => particle.remove(), 1900);
+  }
+    }
+    
   </script>
 </body>
 </html>
